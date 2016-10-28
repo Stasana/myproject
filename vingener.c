@@ -29,13 +29,15 @@ if(text == NULL)
 printf("Try again."); 
 return 1; 
 } 
-
+//шифрування
 for (int i = 0, n = 0; i < strlen(text); i++) 
 { 
 if (isalpha(text[i])) 
 { 
+//для великих літер
 if (isupper(text[i])) 
 printf("%c", ((((text[i] - 'A') + ((toupper(key[n++%keyCount]))-'A')%26) % 26) + 'A')); 
+//для малих літер
 if (islower(text[i])) 
 printf("%c", ((((text[i] - 'a') + ((tolower(key[n++%keyCount]))-'a')%26) % 26) + 'a')); 
 } else 
