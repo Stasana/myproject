@@ -2,7 +2,7 @@
 #include <stdio.h> 
 #include <ctype.h> 
 #include <string.h> 
-//зчитування рядка тексту
+
 int main(int argc, string argv[]) 
 { 
 if (argc != 2) 
@@ -10,7 +10,7 @@ if (argc != 2)
 printf("Try again."); 
 return 1; 
 } 
-
+//зчитування рядка тексту
 string key = argv[1]; 
 unsigned long keyCount = strlen(key); 
 
