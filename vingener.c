@@ -13,10 +13,10 @@ return 1;
 //зчитування рядка тексту
 string key = argv[1]; 
 unsigned long keyCount = strlen(key); 
-
-for(int k = 0; k < keyCount; k++) 
+for(int line_item = 0; line_item < keyCount; line_item++)
 { 
-if (!isalpha(key[k])) 
+//перевірка чи символ є буквою
+if (!isalpha(key[line_item]))
 { 
 printf("Try again."); 
 return 1; 
@@ -36,11 +36,14 @@ if (isalpha(text[i]))
 { 
 //для великих літер
 if (isupper(text[i])) 
-printf("%c", ((((text[i] - 'A') + ((toupper(key[n++%keyCount]))-'A')%26) % 26) + 'A')); 
+char high_letter = ((((text[i] - 'A') + ((toupper(key[n++%keyCount])) - 'A') % 26) % 26) + 'A');
+printf("%c", high_letter);
 //для малих літер
-if (islower(text[i])) 
-printf("%c", ((((text[i] - 'a') + ((tolower(key[n++%keyCount]))-'a')%26) % 26) + 'a')); 
+if (islower(text[i]))
+char small_letter = ((((text[i] - 'a') + ((tolower(key[n++%keyCount])) - 'a') % 26) % 26) + 'a');
+printf("%c", small_letter);
 } else 
+//для знаків
 printf("%c", text[i]); 
 } 
 printf("\n"); 
